@@ -1,0 +1,34 @@
+on the * day of christmas, my true love sent to me
+       *(number st/nd/rd/th)
+				A partridge in a pear tree
+				two turtle doves and
+				three french hens
+				four calling birds
+				five golden rings
+				six geese a-laying
+				seven swand a-swinging
+				eight maids a-milking
+				nine ladies dancing
+				ten lords a-leaping
+				eleven pipers piping
+				twelve drummers drumming
+
+-create a while loop with an iterator variable that increments by 1, this
+variable represents the day
+
+-create a function for the day of christmas taking the iterator variable
+as its parameter, then outputs the nth day of christmas. <ok>
+
+CONTINUE HERE!!
+	output the gifts given lyrics in the vector according to the 
+	current day of christmas!!
+
+-create a function that takes in the lyrics that keeps giving on each
+day of christmas. The function creates a vector where in the parameter
+lyrics gets added into the vector via the insert method. The fucntion
+will then output the lyrics in the following format;
+	on the (nth) day of christmas, my true love sent to me,
+	...
+	...
+	... the lyrics in the vector that keeps on giving!! 
+				
