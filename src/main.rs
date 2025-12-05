@@ -1,26 +1,28 @@
+use std::collections::HashMap;
+
 fn main(){
-	
-	let mut lyrics = Vec::new();
-	lyrics.insert(0, "twelve drummers drumming");
-	lyrics.insert(1, "eleven pipers piping");
-	lyrics.insert(2, "ten lords a-leaping");
-	lyrics.insert(3, "nine ladies dancing");
-	lyrics.insert(4, "eight maids a-milking");
-	lyrics.insert(5, "seven swans a-swimming");
+
+	let mut lyrics = HashMap::new();	
+	lyrics.insert(1, "a partridge in a pear tree");
+	lyrics.insert(2, "two turtle doves and");
+	lyrics.insert(3, "three french hens");
+	lyrics.insert(4, "four calling birds");
+	lyrics.insert(5, "five golden rings");
 	lyrics.insert(6, "six geese a-laying");
-	lyrics.insert(7, "five golden rings");
-	lyrics.insert(8, "four calling birds");
-	lyrics.insert(9, "three french hens");
-	lyrics.insert(10, "two turtle doves and");
-	lyrics.insert(11, "a partridge in a pear tree");
+	lyrics.insert(7, "seven swans a-swimming");
+	lyrics.insert(8, "eight maids a-milking");
+	lyrics.insert(9, "nine ladies dancing");
+	lyrics.insert(10, "ten lords a-leaping");
+	lyrics.insert(11, "eleven pipers piping");
+	lyrics.insert(12, "twelve drummers drumming");
 
 	let mut day = 1;
-	while day<13{
+	while day<=12{
 		println!("On the {} day of Christmas, my true love sent to me, ", nth(&day));
 		print_gifts(&lyrics, day);
 		day+=1;
 	}
-		
+	
 }
 
 fn nth(d: &i32) -> String{
@@ -32,13 +34,13 @@ fn nth(d: &i32) -> String{
 	}
 }
 
-fn print_gifts(gifts: &Vec<&str>, day: i32){
-	let d: usize = day.clone().try_into().unwrap();
-	let length: usize = gifts.len().try_into().unwrap();
-	let mut start: usize = length-d;	
-	while start<gifts.len().try_into().unwrap(){
-		println!("{}", gifts[start]);
-		start+=1;
+fn print_gifts(gifts: &HashMap<i32, &str>, mut day: i32){	
+	while day>0{
+		match gifts.get(&day){
+			Some(val) => println!("{val}"),
+			None => println!("no gift")
+		}
+		day-=1;
 	}
 	println!(" ");	
 }
